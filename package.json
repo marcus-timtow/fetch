@@ -1,0 +1,19 @@
+{
+  "name": "fetch",
+  "version": "1.0.0",
+  "main": "fetch.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcus-timtow/fetch.git"
+  },
+  "dependencies": {
+    "whatwg-fetch": "2.x"
+  },
+  "keywords": ["fetch", "whatwg"],
+  "author": "Marcus Timtow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcus-timtow/fetch/issues"
+  },
+  "homepage": "https://github.com/marcus-timtow/fetch"
+}
