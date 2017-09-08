@@ -67,13 +67,13 @@
         }
 
         return _fetch(options.uri, options).then(function (response) {
-            let contentType = response.headers.get("Content-Type");
+            let contentType = response.headers.get("Content-Type") || "";
             if (response.ok) { // true if response.status is in the 200-299 range
                 if (contentType === "application/json") {
                     return response.json();
                 } else if (contentType.startsWith("image/")) {
                     return response.blob();
-                } else if (contentType.startsWith("text/plain")) {
+                } else if (contentType === "text/plain") {
                     return response.text();
                 } else {
                     return response;
