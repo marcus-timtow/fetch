@@ -9,8 +9,7 @@
     }
 
     if (typeof define === "function" && typeof define.amd === "object") {
-        deps.push(definition);
-        define.apply(this, deps);
+        define.call(this, deps, definition);
     } else if (typeof module !== "undefined") {
         deps = deps.map(function (dep) {
             return require(dep);
@@ -22,7 +21,7 @@
         });
         this[name] = definition.apply(this, deps);
     }
-}("isVisible", ["fetch"], function (_fetch) {
+}("fetch", ["fetch"], function (_fetch) {
     _fetch = window.fetch || _fetch;
     if (!_fetch){
         throw new Error("fetch is undefined");
